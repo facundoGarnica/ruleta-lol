@@ -1,0 +1,56 @@
+{
+  "apb": {
+    "name": "AP explosivo",
+    "items": ["Luden's Companion", "Sorcerer's Shoes", "Shadowflame", "Rabadon's Deathcap", "Void Staff", "Zhonya's Hourglass"],
+    "runes": "Electrocute (Dominación) + Brujería",
+    "tip": "Buscá el combo completo sobre un objetivo blando: entrás, explotás y salís."
+  },
+  "aph": {
+    "name": "AP on-hit",
+    "items": ["Nashor's Tooth", "Berserker's Greaves", "Guinsoo's Rageblade", "Riftmaker", "Wit's End", "Rabadon's Deathcap"],
+    "runes": "Lethal Tempo (Precisión) + Brujería",
+    "tip": "Pegá básicos todo el tiempo; las habilidades son para engancharte y no soltar."
+  },
+  "apt": {
+    "name": "Mago tanque",
+    "items": ["Liandry's Torment", "Mercury's Treads", "Rylai's Crystal Scepter", "Riftmaker", "Jak'Sho, The Protean", "Zhonya's Hourglass"],
+    "runes": "Conqueror (Precisión) + Valor",
+    "tip": "Te metés en el medio de la pelea y quemás a todos de a poco mientras aguantás."
+  },
+  "let": {
+    "name": "Letalidad",
+    "items": ["Youmuu's Ghostblade", "Ionian Boots of Lucidity", "Opportunity", "Edge of Night", "Serylda's Grudge", "Axiom Arc"],
+    "runes": "Dark Harvest (Dominación) + Brujería",
+    "tip": "Esperá en la niebla de guerra y borrá a un carry con un solo combo."
+  },
+  "cri": {
+    "name": "Crítico",
+    "items": ["Yun Tal Wildarrows", "Berserker's Greaves", "Infinity Edge", "Phantom Dancer", "Lord Dominik's Regards", "Bloodthirster"],
+    "runes": "Fleet Footwork (Precisión) + Dominación",
+    "tip": "Farmeá tranquilo hasta tener dos ítems; desde ahí cada básico puede ser un crítico enorme."
+  },
+  "onh": {
+    "name": "AD on-hit",
+    "items": ["Blade of the Ruined King", "Berserker's Greaves", "Wit's End", "Terminus", "Guinsoo's Rageblade", "Kraken Slayer"],
+    "runes": "Lethal Tempo (Precisión) + Valor",
+    "tip": "Buscá peleas largas: cuanto más dura el intercambio, más ganás."
+  },
+  "tan": {
+    "name": "Full tanque",
+    "items": ["Heartsteel", "Plated Steelcaps", "Sunfire Aegis", "Thornmail", "Jak'Sho, The Protean", "Warmog's Armor"],
+    "runes": "Grasp of the Undying (Valor) + Inspiración",
+    "tip": "No vas a matar rápido, pero casi nadie te puede matar: iniciá y absorbé todo."
+  },
+  "bru": {
+    "name": "Luchador",
+    "items": ["Trinity Force", "Plated Steelcaps", "Black Cleaver", "Sterak's Gage", "Death's Dance", "Spirit Visage"],
+    "runes": "Conqueror (Precisión) + Valor",
+    "tip": "Pegate a alguien y no lo sueltes: ganás los duelos largos cuerpo a cuerpo."
+  },
+  "enc": {
+    "name": "Encantador",
+    "items": ["Moonstone Renewer", "Ionian Boots of Lucidity", "Ardent Censer", "Staff of Flowing Water", "Redemption", "Mikael's Blessing"],
+    "runes": "Summon Aery (Brujería) + Inspiración",
+    "tip": "Tu trabajo es que tu equipo no muera: escudos, curas y utilidad todo el tiempo."
+  }
+}
