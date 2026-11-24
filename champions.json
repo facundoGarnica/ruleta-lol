@@ -1,1 +1,1673 @@
-["Aatrox","Ahri","Akali","Akshan","Alistar","Ambessa","Amumu","Anivia","Annie","Aphelios","Ashe","Aurelion Sol","Aurora","Azir","Bard","Bel'Veth","Blitzcrank","Brand","Braum","Briar","Caitlyn","Camille","Cassiopeia","Cho'Gath","Corki","Darius","Diana","Dr. Mundo","Draven","Ekko","Elise","Evelynn","Ezreal","Fiddlesticks","Fiora","Fizz","Galio","Gangplank","Garen","Gnar","Gragas","Graves","Gwen","Hecarim","Heimerdinger","Hwei","Illaoi","Irelia","Ivern","Janna","Jarvan IV","Jax","Jayce","Jhin","Jinx","K'Sante","Kai'Sa","Kalista","Karma","Karthus","Kassadin","Katarina","Kayle","Kayn","Kennen","Kha'Zix","Kindred","Kled","Kog'Maw","LeBlanc","Lee Sin","Leona","Lillia","Lissandra","Lucian","Lulu","Lux","Malphite","Malzahar","Maokai","Master Yi","Mel","Milio","Miss Fortune","Mordekaiser","Morgana","Naafiri","Nami","Nasus","Nautilus","Neeko","Nidalee","Nilah","Nocturne","Nunu & Willump","Olaf","Orianna","Ornn","Pantheon","Poppy","Pyke","Qiyana","Quinn","Rakan","Rammus","Rek'Sai","Rell","Renata Glasc","Renekton","Rengar","Riven","Rumble","Ryze","Samira","Sejuani","Senna","Seraphine","Sett","Shaco","Shen","Shyvana","Singed","Sion","Sivir","Skarner","Smolder","Sona","Soraka","Swain","Sylas","Syndra","Tahm Kench","Taliyah","Talon","Taric","Teemo","Thresh","Tristana","Trundle","Tryndamere","Twisted Fate","Twitch","Udyr","Urgot","Varus","Vayne","Veigar","Vel'Koz","Vex","Vi","Viego","Viktor","Vladimir","Volibear","Warwick","Wukong","Xayah","Xerath","Xin Zhao","Yasuo","Yone","Yorick","Yunara","Yuumi","Zaahen","Zac","Zed","Zeri","Ziggs","Zilean","Zoe","Zyra"]
+{
+"Aatrox": {
+"r": [
+"top"
+],
+"w": [
+"let",
+"tan"
+]
+},
+"Ahri": {
+"r": [
+"mid"
+],
+"w": [
+"apt",
+"enc"
+]
+},
+"Akali": {
+"r": [
+"mid",
+"top"
+],
+"w": [
+"apt",
+"tan"
+]
+},
+"Akshan": {
+"r": [
+"mid",
+"top"
+],
+"w": [
+"onh",
+"let"
+]
+},
+"Alistar": {
+"r": [
+"sup"
+],
+"w": [
+"apb",
+"enc"
+],
+"n": "Combo W+Q con Rabadon: lo tirás contra la pared y el carry ya no se levanta."
+},
+"Ambessa": {
+"r": [
+"top",
+"jg"
+],
+"w": [
+"tan",
+"let"
+]
+},
+"Amumu": {
+"r": [
+"jg",
+"sup"
+],
+"w": [
+"apb",
+"apt"
+]
+},
+"Anivia": {
+"r": [
+"mid",
+"sup"
+],
+"w": [
+"apt",
+"tan"
+]
+},
+"Annie": {
+"r": [
+"mid",
+"sup"
+],
+"w": [
+"apt",
+"tan"
+]
+},
+"Aphelios": {
+"r": [
+"adc"
+],
+"w": [
+"let",
+"onh"
+]
+},
+"Ashe": {
+"r": [
+"adc",
+"sup"
+],
+"w": [
+"let",
+"tan"
+]
+},
+"Aurelion Sol": {
+"r": [
+"mid"
+],
+"w": [
+"apt",
+"tan"
+]
+},
+"Aurora": {
+"r": [
+"mid",
+"top"
+],
+"w": [
+"apt",
+"aph"
+]
+},
+"Azir": {
+"r": [
+"mid"
+],
+"w": [
+"aph",
+"apt"
+],
+"n": "Los soldados aplican efectos on-hit: con Nashor y Guinsoo cada pinchazo duele de verdad."
+},
+"Bard": {
+"r": [
+"sup"
+],
+"w": [
+"aph",
+"apb"
+],
+"n": "Los meeps escalan con AP: con Nashor y Guinsoo tus básicos se vuelven una escopeta."
+},
+"Bel'Veth": {
+"r": [
+"jg"
+],
+"w": [
+"cri",
+"tan"
+]
+},
+"Blitzcrank": {
+"r": [
+"sup"
+],
+"w": [
+"apb",
+"bru"
+],
+"n": "Gancho + R con Rabadon: si agarrás a un tirador, desaparece antes de reaccionar."
+},
+"Brand": {
+"r": [
+"sup",
+"mid"
+],
+"w": [
+"apt",
+"tan"
+]
+},
+"Braum": {
+"r": [
+"sup"
+],
+"w": [
+"onh",
+"bru"
+],
+"n": "Con velocidad de ataque cargás la pasiva solo: cada pelea aturdís a alguien."
+},
+"Briar": {
+"r": [
+"jg"
+],
+"w": [
+"tan",
+"cri"
+]
+},
+"Caitlyn": {
+"r": [
+"adc"
+],
+"w": [
+"let",
+"onh"
+]
+},
+"Camille": {
+"r": [
+"top"
+],
+"w": [
+"let",
+"tan"
+]
+},
+"Cassiopeia": {
+"r": [
+"mid",
+"top"
+],
+"w": [
+"apt",
+"tan"
+]
+},
+"Cho'Gath": {
+"r": [
+"top",
+"mid"
+],
+"w": [
+"apb",
+"bru"
+],
+"n": "Cho AP: la R hace daño verdadero enorme y Rupture con Rabadon saca medio carry."
+},
+"Corki": {
+"r": [
+"mid"
+],
+"w": [
+"apb",
+"onh"
+],
+"n": "Corki AP clásico: los misiles y el Gatling escalan muy bien con Rabadon."
+},
+"Darius": {
+"r": [
+"top"
+],
+"w": [
+"tan",
+"let"
+]
+},
+"Diana": {
+"r": [
+"jg",
+"mid"
+],
+"w": [
+"aph",
+"tan"
+],
+"n": "Diana Nashor: la pasiva le da velocidad de ataque y cada tercer golpe explota."
+},
+"Dr. Mundo": {
+"r": [
+"top",
+"jg"
+],
+"w": [
+"bru",
+"onh"
+]
+},
+"Draven": {
+"r": [
+"adc"
+],
+"w": [
+"let",
+"bru"
+]
+},
+"Ekko": {
+"r": [
+"jg",
+"mid"
+],
+"w": [
+"aph",
+"tan"
+]
+},
+"Elise": {
+"r": [
+"jg"
+],
+"w": [
+"tan",
+"aph"
+]
+},
+"Evelynn": {
+"r": [
+"jg"
+],
+"w": [
+"aph",
+"apt"
+]
+},
+"Ezreal": {
+"r": [
+"adc"
+],
+"w": [
+"apb",
+"onh"
+],
+"n": "Ezreal AP: la Q aplica el daño de la W y la R limpia oleadas y medio equipo."
+},
+"Fiddlesticks": {
+"r": [
+"jg"
+],
+"w": [
+"apt",
+"tan"
+]
+},
+"Fiora": {
+"r": [
+"top"
+],
+"w": [
+"let",
+"tan"
+]
+},
+"Fizz": {
+"r": [
+"mid"
+],
+"w": [
+"aph",
+"tan"
+]
+},
+"Galio": {
+"r": [
+"mid",
+"sup"
+],
+"w": [
+"tan",
+"apt"
+]
+},
+"Gangplank": {
+"r": [
+"top",
+"mid"
+],
+"w": [
+"let",
+"tan"
+]
+},
+"Garen": {
+"r": [
+"top"
+],
+"w": [
+"cri",
+"tan"
+],
+"n": "Garen crítico: el giro de la E y la Q pegan con críticos y la R ejecuta."
+},
+"Gnar": {
+"r": [
+"top"
+],
+"w": [
+"onh",
+"let"
+]
+},
+"Gragas": {
+"r": [
+"jg",
+"top",
+"sup"
+],
+"w": [
+"tan",
+"apt"
+]
+},
+"Graves": {
+"r": [
+"jg"
+],
+"w": [
+"bru",
+"tan"
+]
+},
+"Gwen": {
+"r": [
+"top",
+"jg"
+],
+"w": [
+"tan",
+"apb"
+]
+},
+"Hecarim": {
+"r": [
+"jg"
+],
+"w": [
+"let",
+"tan"
+]
+},
+"Heimerdinger": {
+"r": [
+"mid",
+"sup",
+"top"
+],
+"w": [
+"apt",
+"tan"
+]
+},
+"Hwei": {
+"r": [
+"mid",
+"sup"
+],
+"w": [
+"apt",
+"enc"
+]
+},
+"Illaoi": {
+"r": [
+"top"
+],
+"w": [
+"tan",
+"let"
+]
+},
+"Irelia": {
+"r": [
+"top",
+"mid"
+],
+"w": [
+"tan",
+"cri"
+]
+},
+"Ivern": {
+"r": [
+"jg",
+"sup"
+],
+"w": [
+"apb",
+"tan"
+]
+},
+"Janna": {
+"r": [
+"sup"
+],
+"w": [
+"apb",
+"tan"
+],
+"n": "Janna AP: el tornado y la W pegan mucho más de lo que creen y el escudo sigue siendo enorme."
+},
+"Jarvan IV": {
+"r": [
+"jg",
+"top"
+],
+"w": [
+"tan",
+"cri"
+]
+},
+"Jax": {
+"r": [
+"top",
+"jg"
+],
+"w": [
+"aph",
+"tan"
+],
+"n": "Jax AP clásico: la W y la R escalan con AP y la pasiva te da velocidad de ataque."
+},
+"Jayce": {
+"r": [
+"top",
+"mid"
+],
+"w": [
+"tan",
+"bru"
+]
+},
+"Jhin": {
+"r": [
+"adc"
+],
+"w": [
+"let",
+"onh"
+]
+},
+"Jinx": {
+"r": [
+"adc"
+],
+"w": [
+"onh",
+"let"
+]
+},
+"K'Sante": {
+"r": [
+"top"
+],
+"w": [
+"bru",
+"let"
+]
+},
+"Kai'Sa": {
+"r": [
+"adc"
+],
+"w": [
+"aph",
+"let"
+],
+"n": "Kai'Sa AP: evolucionás la Q y la W, y la W se vuelve un misil que saca un tercio de vida."
+},
+"Kalista": {
+"r": [
+"adc"
+],
+"w": [
+"onh",
+"tan"
+]
+},
+"Karma": {
+"r": [
+"sup",
+"mid"
+],
+"w": [
+"apb",
+"tan"
+]
+},
+"Karthus": {
+"r": [
+"jg",
+"mid"
+],
+"w": [
+"apt",
+"tan"
+]
+},
+"Kassadin": {
+"r": [
+"mid"
+],
+"w": [
+"apt",
+"tan"
+]
+},
+"Katarina": {
+"r": [
+"mid"
+],
+"w": [
+"aph",
+"let"
+],
+"n": "Katarina on-hit: la E aplica efectos de impacto y la R pega con todo lo que compraste."
+},
+"Kayle": {
+"r": [
+"top",
+"mid"
+],
+"w": [
+"cri",
+"tan"
+]
+},
+"Kayn": {
+"r": [
+"jg"
+],
+"w": [
+"tan",
+"cri"
+]
+},
+"Kennen": {
+"r": [
+"top",
+"mid"
+],
+"w": [
+"onh",
+"tan"
+],
+"n": "Kennen AD: la pasiva de la W se carga con básicos y aturdís a todos con la R."
+},
+"Kha'Zix": {
+"r": [
+"jg"
+],
+"w": [
+"bru",
+"tan"
+]
+},
+"Kindred": {
+"r": [
+"jg"
+],
+"w": [
+"onh",
+"tan"
+]
+},
+"Kled": {
+"r": [
+"top"
+],
+"w": [
+"let",
+"tan"
+]
+},
+"Kog'Maw": {
+"r": [
+"adc"
+],
+"w": [
+"aph",
+"let"
+],
+"n": "Kog AP: la W convierte tus básicos en daño mágico y la R escala muy fuerte."
+},
+"LeBlanc": {
+"r": [
+"mid"
+],
+"w": [
+"apt",
+"tan"
+]
+},
+"Lee Sin": {
+"r": [
+"jg"
+],
+"w": [
+"tan",
+"onh"
+]
+},
+"Leona": {
+"r": [
+"sup"
+],
+"w": [
+"apb",
+"bru"
+]
+},
+"Lillia": {
+"r": [
+"jg"
+],
+"w": [
+"tan",
+"apb"
+]
+},
+"Lissandra": {
+"r": [
+"mid"
+],
+"w": [
+"tan",
+"apt"
+]
+},
+"Lucian": {
+"r": [
+"adc",
+"mid"
+],
+"w": [
+"let",
+"bru"
+]
+},
+"Lulu": {
+"r": [
+"sup"
+],
+"w": [
+"aph",
+"apb"
+],
+"n": "Lulu on-hit: Pix pega con tus básicos y te aplicás a vos mismo la W y la E."
+},
+"Lux": {
+"r": [
+"mid",
+"sup"
+],
+"w": [
+"apt",
+"enc"
+]
+},
+"Malphite": {
+"r": [
+"top",
+"sup",
+"mid"
+],
+"w": [
+"apb",
+"bru"
+],
+"n": "Malphite AP: la R desde la niebla y la Q borran a cualquier tirador."
+},
+"Malzahar": {
+"r": [
+"mid"
+],
+"w": [
+"apt",
+"tan"
+]
+},
+"Maokai": {
+"r": [
+"sup",
+"jg",
+"top"
+],
+"w": [
+"apb",
+"apt"
+],
+"n": "Maokai AP: los arbolitos explotan muchísimo y seguís siendo durísimo de matar."
+},
+"Master Yi": {
+"r": [
+"jg"
+],
+"w": [
+"aph",
+"tan"
+],
+"n": "Yi AP: la Q y la E escalan con AP y matás con la Q sin que te puedan tocar."
+},
+"Mel": {
+"r": [
+"mid",
+"sup"
+],
+"w": [
+"apt",
+"tan"
+]
+},
+"Milio": {
+"r": [
+"sup"
+],
+"w": [
+"apb",
+"tan"
+]
+},
+"Miss Fortune": {
+"r": [
+"adc"
+],
+"w": [
+"apb",
+"let"
+],
+"n": "MF AP: la E y sobre todo la R escalan con AP. Una R bien puesta gana la pelea."
+},
+"Mordekaiser": {
+"r": [
+"top"
+],
+"w": [
+"tan",
+"apb"
+]
+},
+"Morgana": {
+"r": [
+"sup",
+"mid"
+],
+"w": [
+"apt",
+"tan"
+]
+},
+"Naafiri": {
+"r": [
+"mid"
+],
+"w": [
+"tan",
+"bru"
+]
+},
+"Nami": {
+"r": [
+"sup"
+],
+"w": [
+"apb",
+"tan"
+]
+},
+"Nasus": {
+"r": [
+"top"
+],
+"w": [
+"apb",
+"cri"
+]
+},
+"Nautilus": {
+"r": [
+"sup"
+],
+"w": [
+"apb",
+"bru"
+]
+},
+"Neeko": {
+"r": [
+"mid",
+"sup"
+],
+"w": [
+"tan",
+"apt"
+]
+},
+"Nidalee": {
+"r": [
+"jg"
+],
+"w": [
+"tan",
+"apt"
+]
+},
+"Nilah": {
+"r": [
+"adc"
+],
+"w": [
+"tan",
+"bru"
+]
+},
+"Nocturne": {
+"r": [
+"jg"
+],
+"w": [
+"tan",
+"let"
+]
+},
+"Nunu & Willump": {
+"r": [
+"jg"
+],
+"w": [
+"apb",
+"aph"
+]
+},
+"Olaf": {
+"r": [
+"top",
+"jg"
+],
+"w": [
+"tan",
+"onh"
+]
+},
+"Orianna": {
+"r": [
+"mid"
+],
+"w": [
+"apt",
+"enc"
+]
+},
+"Ornn": {
+"r": [
+"top"
+],
+"w": [
+"bru",
+"apt"
+]
+},
+"Pantheon": {
+"r": [
+"top",
+"mid",
+"sup"
+],
+"w": [
+"tan",
+"cri"
+]
+},
+"Poppy": {
+"r": [
+"top",
+"jg",
+"sup"
+],
+"w": [
+"let",
+"apb"
+]
+},
+"Pyke": {
+"r": [
+"sup"
+],
+"w": [
+"tan",
+"bru"
+],
+"n": "Pyke convierte la vida extra en daño: comprá vida y tus ejecuciones salen igual."
+},
+"Qiyana": {
+"r": [
+"mid",
+"jg"
+],
+"w": [
+"tan",
+"bru"
+]
+},
+"Quinn": {
+"r": [
+"top"
+],
+"w": [
+"onh",
+"apb"
+]
+},
+"Rakan": {
+"r": [
+"sup"
+],
+"w": [
+"apb",
+"tan"
+],
+"n": "Rakan AP: entrás con la W y la R, y explotás a la línea de atrás."
+},
+"Rammus": {
+"r": [
+"jg"
+],
+"w": [
+"apb",
+"onh"
+],
+"n": "Rammus AP: la Q rodando y la R con Rabadon pegan más de lo que parece."
+},
+"Rek'Sai": {
+"r": [
+"jg"
+],
+"w": [
+"let",
+"tan"
+]
+},
+"Rell": {
+"r": [
+"sup"
+],
+"w": [
+"apb",
+"bru"
+]
+},
+"Renata Glasc": {
+"r": [
+"sup"
+],
+"w": [
+"apb",
+"tan"
+]
+},
+"Renekton": {
+"r": [
+"top"
+],
+"w": [
+"tan",
+"let"
+]
+},
+"Rengar": {
+"r": [
+"jg",
+"top"
+],
+"w": [
+"tan",
+"cri"
+]
+},
+"Riven": {
+"r": [
+"top"
+],
+"w": [
+"tan",
+"cri"
+]
+},
+"Rumble": {
+"r": [
+"top",
+"mid"
+],
+"w": [
+"tan",
+"apt"
+]
+},
+"Ryze": {
+"r": [
+"mid",
+"top"
+],
+"w": [
+"tan",
+"apb"
+]
+},
+"Samira": {
+"r": [
+"adc"
+],
+"w": [
+"let",
+"bru"
+]
+},
+"Sejuani": {
+"r": [
+"jg"
+],
+"w": [
+"apb",
+"bru"
+]
+},
+"Senna": {
+"r": [
+"sup",
+"adc"
+],
+"w": [
+"cri",
+"enc"
+]
+},
+"Seraphine": {
+"r": [
+"sup",
+"mid",
+"adc"
+],
+"w": [
+"apt",
+"tan"
+]
+},
+"Sett": {
+"r": [
+"top",
+"sup"
+],
+"w": [
+"tan",
+"let"
+]
+},
+"Shaco": {
+"r": [
+"jg",
+"sup"
+],
+"w": [
+"apb",
+"cri"
+],
+"n": "Shaco AP: llenás el mapa de cajas y la R con Rabadon explota en la cara."
+},
+"Shen": {
+"r": [
+"top",
+"sup"
+],
+"w": [
+"apb",
+"onh"
+],
+"n": "Shen AP: la espada y el escudo de la R escalan con AP y salvás a cualquiera."
+},
+"Shyvana": {
+"r": [
+"jg"
+],
+"w": [
+"apb",
+"tan"
+],
+"n": "Shyvana AP: la E en forma de dragón es un misil de daño enorme."
+},
+"Singed": {
+"r": [
+"top"
+],
+"w": [
+"apb",
+"bru"
+]
+},
+"Sion": {
+"r": [
+"top"
+],
+"w": [
+"let",
+"cri"
+],
+"n": "Sion AD: la Q cargada con letalidad borra squishies a media pantalla."
+},
+"Sivir": {
+"r": [
+"adc"
+],
+"w": [
+"let",
+"onh"
+]
+},
+"Skarner": {
+"r": [
+"jg",
+"top"
+],
+"w": [
+"bru",
+"apb"
+]
+},
+"Smolder": {
+"r": [
+"adc",
+"mid"
+],
+"w": [
+"let",
+"tan"
+]
+},
+"Sona": {
+"r": [
+"sup"
+],
+"w": [
+"apb",
+"tan"
+]
+},
+"Soraka": {
+"r": [
+"sup"
+],
+"w": [
+"apb",
+"tan"
+]
+},
+"Swain": {
+"r": [
+"sup",
+"mid",
+"top"
+],
+"w": [
+"tan",
+"enc"
+]
+},
+"Sylas": {
+"r": [
+"mid",
+"top"
+],
+"w": [
+"tan",
+"aph"
+]
+},
+"Syndra": {
+"r": [
+"mid"
+],
+"w": [
+"apt",
+"tan"
+]
+},
+"Tahm Kench": {
+"r": [
+"top",
+"sup"
+],
+"w": [
+"apb",
+"onh"
+]
+},
+"Taliyah": {
+"r": [
+"jg",
+"mid"
+],
+"w": [
+"apt",
+"tan"
+]
+},
+"Talon": {
+"r": [
+"mid",
+"jg"
+],
+"w": [
+"tan",
+"bru"
+]
+},
+"Taric": {
+"r": [
+"sup"
+],
+"w": [
+"onh",
+"apb"
+],
+"n": "Taric on-hit: la pasiva te da básicos dobles con velocidad de ataque."
+},
+"Teemo": {
+"r": [
+"top"
+],
+"w": [
+"onh",
+"tan"
+]
+},
+"Thresh": {
+"r": [
+"sup"
+],
+"w": [
+"apb",
+"onh"
+],
+"n": "Thresh AP: las almas te dan AP gratis y la E y el farol pegan fuerte."
+},
+"Tristana": {
+"r": [
+"adc",
+"mid"
+],
+"w": [
+"apb",
+"let"
+],
+"n": "Trist AP clásico: la E y la R escalan con AP. Saltás, explotás y te vas."
+},
+"Trundle": {
+"r": [
+"jg",
+"top"
+],
+"w": [
+"tan",
+"cri"
+]
+},
+"Tryndamere": {
+"r": [
+"top"
+],
+"w": [
+"let",
+"aph"
+]
+},
+"Twisted Fate": {
+"r": [
+"mid"
+],
+"w": [
+"onh",
+"apt"
+],
+"n": "TF AD: el dado amarillo, la pasiva de la E y tus básicos se vuelven un tirador."
+},
+"Twitch": {
+"r": [
+"adc",
+"jg"
+],
+"w": [
+"apb",
+"let"
+],
+"n": "Twitch AP: el veneno escala con AP y la E explota a todo el equipo."
+},
+"Udyr": {
+"r": [
+"jg",
+"top"
+],
+"w": [
+"apb",
+"onh"
+],
+"n": "Udyr AP: la forma de fénix/tormenta escala con AP y quemás todo alrededor."
+},
+"Urgot": {
+"r": [
+"top"
+],
+"w": [
+"let",
+"onh"
+]
+},
+"Varus": {
+"r": [
+"adc",
+"mid"
+],
+"w": [
+"apb",
+"onh"
+]
+},
+"Vayne": {
+"r": [
+"adc",
+"top"
+],
+"w": [
+"let",
+"bru"
+]
+},
+"Veigar": {
+"r": [
+"mid",
+"sup"
+],
+"w": [
+"tan",
+"apt"
+]
+},
+"Vel'Koz": {
+"r": [
+"mid",
+"sup"
+],
+"w": [
+"apt",
+"tan"
+]
+},
+"Vex": {
+"r": [
+"mid"
+],
+"w": [
+"apt",
+"tan"
+]
+},
+"Vi": {
+"r": [
+"jg"
+],
+"w": [
+"let",
+"tan"
+]
+},
+"Viego": {
+"r": [
+"jg"
+],
+"w": [
+"tan",
+"onh"
+]
+},
+"Viktor": {
+"r": [
+"mid"
+],
+"w": [
+"apt",
+"tan"
+]
+},
+"Vladimir": {
+"r": [
+"mid",
+"top"
+],
+"w": [
+"apt",
+"tan"
+]
+},
+"Volibear": {
+"r": [
+"top",
+"jg"
+],
+"w": [
+"apb",
+"onh"
+],
+"n": "Voli AP: la E escala con AP y la pasiva te da daño mágico en cadena."
+},
+"Warwick": {
+"r": [
+"jg",
+"top"
+],
+"w": [
+"onh",
+"tan"
+]
+},
+"Wukong": {
+"r": [
+"top",
+"jg"
+],
+"w": [
+"tan",
+"cri"
+]
+},
+"Xayah": {
+"r": [
+"adc"
+],
+"w": [
+"let",
+"onh"
+]
+},
+"Xerath": {
+"r": [
+"mid",
+"sup"
+],
+"w": [
+"apt",
+"tan"
+]
+},
+"Xin Zhao": {
+"r": [
+"jg"
+],
+"w": [
+"cri",
+"tan"
+]
+},
+"Yasuo": {
+"r": [
+"mid",
+"top"
+],
+"w": [
+"let",
+"tan"
+]
+},
+"Yone": {
+"r": [
+"mid",
+"top"
+],
+"w": [
+"tan",
+"let"
+]
+},
+"Yorick": {
+"r": [
+"top"
+],
+"w": [
+"tan",
+"onh"
+]
+},
+"Yunara": {
+"r": [
+"adc"
+],
+"w": [
+"let",
+"tan"
+]
+},
+"Yuumi": {
+"r": [
+"sup"
+],
+"w": [
+"apb",
+"aph"
+]
+},
+"Zaahen": {
+"r": [
+"top",
+"jg"
+],
+"w": [
+"tan",
+"let"
+]
+},
+"Zac": {
+"r": [
+"jg",
+"top",
+"sup"
+],
+"w": [
+"apb",
+"bru"
+],
+"n": "Zac AP: saltás con la E desde lejos y le sacás media vida a la línea de atrás."
+},
+"Zed": {
+"r": [
+"mid",
+"jg"
+],
+"w": [
+"tan",
+"bru"
+]
+},
+"Zeri": {
+"r": [
+"adc"
+],
+"w": [
+"let",
+"onh"
+]
+},
+"Ziggs": {
+"r": [
+"mid",
+"adc"
+],
+"w": [
+"apt",
+"tan"
+]
+},
+"Zilean": {
+"r": [
+"sup",
+"mid"
+],
+"w": [
+"apb",
+"tan"
+]
+},
+"Zoe": {
+"r": [
+"mid",
+"sup"
+],
+"w": [
+"apt",
+"tan"
+]
+},
+"Zyra": {
+"r": [
+"sup",
+"jg",
+"mid"
+],
+"w": [
+"apt",
+"tan"
+]
+}
+}

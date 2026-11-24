@@ -35,7 +35,7 @@ button:disabled{opacity:.45;cursor:not-allowed}
 .dot.on{background:#5ee08a;box-shadow:0 0 10px #5ee08a}
 .me{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:18px}
 #nick{width:min(260px,100%)}
-.seats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.seats{display:grid;align-items:start;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .seat{--c:var(--p1);background:linear-gradient(180deg,#12333a,#0d252b);border:1px solid var(--line);border-radius:18px;padding:16px;position:relative;box-shadow:0 18px 40px -24px #000}
 .seat[data-s="2"]{--c:var(--p2)}.seat[data-s="3"]{--c:var(--p3)}
 .seat.mine{border-color:var(--c);box-shadow:0 0 0 1px var(--c),0 18px 50px -20px color-mix(in srgb,var(--c) 55%,transparent)}
@@ -88,6 +88,24 @@ textarea{width:100%;min-height:160px;font-size:15px;line-height:1.5}
 .round{color:var(--mute);font-size:14px}
 .claimbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:18px}
 .claimbar .tag{margin-right:4px}
+.rolerow{display:flex;align-items:center;gap:8px;margin:-4px 0 12px;font-size:14px;color:var(--mute)}
+select{font:inherit;font-size:16px;color:var(--ink);background:#0b2228;border:1px solid var(--line);border-radius:10px;min-height:40px;padding:0 10px}
+select:disabled{opacity:.8;cursor:default}
+.build{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px}
+.build[hidden]{display:none}
+.build h3{margin:0 0 2px;font:700 16px/1.25 Cinzel,Georgia,serif;color:var(--c)}
+.build .bk{font-size:13px;color:var(--mute);margin:0 0 8px}
+.build .note{margin:0 0 8px;font-size:15px}
+.build ol{margin:0 0 8px;padding-left:20px;font-size:15px}
+.build ol li{padding:1px 0}
+.build .ru,.build .tp{margin:0 0 6px;font-size:14px;color:var(--mute)}
+.build .ru b,.build .tp b{color:var(--ink);font-weight:600}
+.build .acts{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}
+.build .ok{display:flex;gap:10px;align-items:center;min-height:44px;padding:0 12px;border:1px solid var(--line);border-radius:10px;background:#0b2228;cursor:pointer;font-weight:600;font-size:15px}
+.build .ok input{width:20px;height:20px;accent-color:var(--c);margin:0}
+.build .ok.done{border-color:var(--c);background:color-mix(in srgb,var(--c) 16%,#0b2228)}
+.build .ok.ro{cursor:default}
+.build .other{font-size:14px}
 </style>
 </head>
 <body>
@@ -95,7 +113,7 @@ textarea{width:100%;min-height:160px;font-size:15px;line-height:1.5}
   <div class="top">
     <div>
       <h1>Ruleta de campeones</h1>
-      <p class="sub">Facu, Jordy y Rexx: un tiro por turno, tres campeones para cada uno.</p>
+      <p class="sub">Facu, Jordy y Rexx: un tiro por turno, tres campeones para cada uno, filtrados por rol. Elegí el tuyo y animate a la build rara.</p>
     </div>
     <div class="roombar">
       <label for="code">Sala</label>
@@ -121,6 +139,7 @@ const $=id=>document.getElementById(id);
 const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{v==null?localStorage.removeItem(k):localStorage.setItem(k,v)}catch(e){}}};
 const socket=io();
 const NAMES={1:"Facu",2:"Jordy",3:"Rexx"};
+const ROLES=[["any","Cualquiera"],["top","Top"],["jg","Jungla"],["mid","Mid"],["adc","ADC"],["sup","Support"]];
 let CHAMPS=["Ahri","Garen","Jinx","Lux","Yasuo","Thresh"];
 let state=null, result=null, rolling=false;
 const timers=[];
@@ -128,7 +147,13 @@ const timers=[];
 $("seats").innerHTML=[1,2,3].map(s=>`
 <article class="seat" data-s="${s}">
   <header><span class="num">${s}</span><div><div class="who">${NAMES[s]}</div><div class="tag"><span class="online"></span><span class="st">Desconectado</span></div></div></header>
+  <div class="rolerow"><label for="role${s}">Rol</label><select id="role${s}" class="role" data-s="${s}" disabled>${ROLES.map(([v,t])=>`<option value="${v}">${t}</option>`).join("")}</select></div>
   <ol class="reels">${[0,1,2].map(i=>`<li><button class="slot empty" data-s="${s}" data-i="${i}"><span class="nm">—</span><span class="mk">Juego con este</span></button></li>`).join('')}</ol>
+  <div class="build" hidden>
+    <h3></h3><p class="bk"></p><p class="note"></p><ol></ol>
+    <p class="ru"></p><p class="tp"></p>
+    <div class="acts"><label class="ok"><input type="checkbox" class="acc" data-s="${s}"><span class="okt">Me la juego con esta build</span></label><button class="other" data-s="${s}">Otra build rara</button></div>
+  </div>
 </article>`).join('');
 const seatEl=s=>document.querySelector(`.seat[data-s="${s}"]`);
 const slotEl=(s,i)=>document.querySelector(`.slot[data-s="${s}"][data-i="${i}"]`);
@@ -153,13 +178,35 @@ function render(){
     el.classList.toggle("on",!!o);
     el.classList.toggle("turn",!!state&&state.turn===s);
     el.querySelector(".st").textContent=mine?"Vos":o?"Conectado":"Desconectado";
+    const sel=el.querySelector(".role");
+    sel.disabled=!mine;
+    if(document.activeElement!==sel) sel.value=state?state.roles[s]:"any";
+    renderBuild(s,el,mine);
     for(const i of [0,1,2]){
-      const b=slotEl(s,i), on=!rolling&&!!result&&!!o&&o.pick===i;
+      const b=slotEl(s,i), on=!rolling&&!!result&&state.picks[s]===i;
       b.classList.toggle("picked",on);
       b.setAttribute("aria-pressed",String(on));
     }
   }
   renderPanel(me);
+}
+
+function renderBuild(s,el,mine){
+  const box=el.querySelector(".build"), w=state&&!rolling&&state.weird[s];
+  box.hidden=!w;
+  if(!w) return;
+  box.querySelector("h3").textContent=`Build rara: ${w.name}`;
+  box.querySelector(".bk").textContent=`para ${w.champ}`;
+  const note=box.querySelector(".note"); note.textContent=w.note||""; note.hidden=!w.note;
+  const ol=box.querySelector("ol"); ol.textContent="";
+  for(const it of w.items){const li=document.createElement("li");li.textContent=it;ol.appendChild(li)}
+  box.querySelector(".ru").innerHTML="<b>Runas:</b> "; box.querySelector(".ru").append(w.runes);
+  box.querySelector(".tp").innerHTML="<b>Cómo jugarla:</b> "; box.querySelector(".tp").append(w.tip);
+  const acc=box.querySelector(".acc"), lab=box.querySelector(".ok");
+  acc.checked=!!w.accepted; acc.disabled=!mine;
+  lab.classList.toggle("done",!!w.accepted); lab.classList.toggle("ro",!mine);
+  box.querySelector(".okt").textContent=mine?(w.accepted?"Build rara confirmada":"Me la juego con esta build"):(w.accepted?`${NAMES[s]} confirmó la build rara`:`${NAMES[s]} todavía no confirmó`);
+  const oth=box.querySelector(".other"); oth.hidden=!mine||w.accepted||w.options<2;
 }
 
 function renderPanel(me){
@@ -187,7 +234,10 @@ function renderPanel(me){
     $("spin").disabled=!others.length;
     return;
   }
-  p.innerHTML=`<p class="big">Le toca tirar a ${NAMES[turn]}</p><p class="small">Después te toca a vos${turn%3+1===me?"":" (en dos turnos)"}.</p>${roundTxt}`;
+  const online=s=>!!state.seats[s];
+  let nx=turn; for(let k=1;k<=3;k++){const n=((turn-1+k)%3)+1;if(online(n)){nx=n;break}}
+  const away=online(turn)?"":` (si no vuelve en unos segundos, pasa el turno)`;
+  p.innerHTML=`<p class="big">Le toca tirar a ${NAMES[turn]}</p><p class="small">${online(turn)?"":`${NAMES[turn]} no está conectado${away}. `}${nx===me?"Después te toca a vos.":`Después le toca a ${NAMES[nx]}.`}</p>${roundTxt}`;
 }
 
 function showResult(r,animate){
@@ -231,10 +281,17 @@ document.addEventListener("click",ev=>{
   if(t.id==="cancel"){socket.emit("cancel");return}
   if(t.id==="yes"){t.disabled=true;socket.emit("respond",true);return}
   if(t.id==="no"){socket.emit("respond",false);return}
+  if(t.classList.contains("other")){socket.emit("weird-other");return}
   if(t.classList.contains("slot")&&result&&!rolling&&+t.dataset.s===mySeat()){
-    const i=+t.dataset.i, cur=state.seats[mySeat()].pick;
+    const i=+t.dataset.i, cur=state.picks[mySeat()];
     socket.emit("pick",cur===i?null:i);
   }
+});
+
+document.addEventListener("change",ev=>{
+  const t=ev.target;
+  if(t.classList.contains("role")&&+t.dataset.s===mySeat()){socket.emit("role",t.value);return}
+  if(t.classList.contains("acc")&&+t.dataset.s===mySeat()){socket.emit("weird-accept",t.checked)}
 });
 
 // sala
