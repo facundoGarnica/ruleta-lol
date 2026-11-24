@@ -1,56 +1,344 @@
 {
   "apb": {
     "name": "AP explosivo",
-    "items": ["Luden's Companion", "Sorcerer's Shoes", "Shadowflame", "Rabadon's Deathcap", "Void Staff", "Zhonya's Hourglass"],
-    "runes": "Electrocute (Dominación) + Brujería",
+    "items": [
+      {
+        "id": 6655,
+        "name": "Eco de Luden"
+      },
+      {
+        "id": 3020,
+        "name": "Botas del Hechicero"
+      },
+      {
+        "id": 4645,
+        "name": "Lumbría"
+      },
+      {
+        "id": 3089,
+        "name": "Sombrero Mortífero de Rabadon"
+      },
+      {
+        "id": 3135,
+        "name": "Báculo del Vacío"
+      },
+      {
+        "id": 3157,
+        "name": "Reloj de Arena de Zhonya"
+      }
+    ],
+    "runes": {
+      "keystone": 8112,
+      "primary": 8100,
+      "secondary": 8200,
+      "name": "Electrocutar",
+      "icon": "perk-images/Styles/Domination/Electrocute/Electrocute.png",
+      "text": "Electrocutar (Dominación) + Brujería"
+    },
     "tip": "Buscá el combo completo sobre un objetivo blando: entrás, explotás y salís."
   },
   "aph": {
     "name": "AP on-hit",
-    "items": ["Nashor's Tooth", "Berserker's Greaves", "Guinsoo's Rageblade", "Riftmaker", "Wit's End", "Rabadon's Deathcap"],
-    "runes": "Lethal Tempo (Precisión) + Brujería",
+    "items": [
+      {
+        "id": 3115,
+        "name": "Diente de Nashor"
+      },
+      {
+        "id": 3006,
+        "name": "Grebas del Berserker"
+      },
+      {
+        "id": 3124,
+        "name": "Espadafuria de Guinsoo"
+      },
+      {
+        "id": 4633,
+        "name": "Agrietador"
+      },
+      {
+        "id": 3091,
+        "name": "Al Filo de la Cordura"
+      },
+      {
+        "id": 3089,
+        "name": "Sombrero Mortífero de Rabadon"
+      }
+    ],
+    "runes": {
+      "keystone": 8008,
+      "primary": 8000,
+      "secondary": 8200,
+      "name": "Cadencia Letal",
+      "icon": "perk-images/Styles/Precision/LethalTempo/LethalTempoTemp.png",
+      "text": "Cadencia Letal (Precisión) + Brujería"
+    },
     "tip": "Pegá básicos todo el tiempo; las habilidades son para engancharte y no soltar."
   },
   "apt": {
     "name": "Mago tanque",
-    "items": ["Liandry's Torment", "Mercury's Treads", "Rylai's Crystal Scepter", "Riftmaker", "Jak'Sho, The Protean", "Zhonya's Hourglass"],
-    "runes": "Conqueror (Precisión) + Valor",
+    "items": [
+      {
+        "id": 6653,
+        "name": "El Tormento de Liandry"
+      },
+      {
+        "id": 3111,
+        "name": "Botas de Mercurio"
+      },
+      {
+        "id": 3116,
+        "name": "Cetro de Cristal de Rylai"
+      },
+      {
+        "id": 4633,
+        "name": "Agrietador"
+      },
+      {
+        "id": 6665,
+        "name": "Jak'Sho, el Proteico"
+      },
+      {
+        "id": 3157,
+        "name": "Reloj de Arena de Zhonya"
+      }
+    ],
+    "runes": {
+      "keystone": 8010,
+      "primary": 8000,
+      "secondary": 8400,
+      "name": "Conquistador",
+      "icon": "perk-images/Styles/Precision/Conqueror/Conqueror.png",
+      "text": "Conquistador (Precisión) + Valor"
+    },
     "tip": "Te metés en el medio de la pelea y quemás a todos de a poco mientras aguantás."
   },
   "let": {
     "name": "Letalidad",
-    "items": ["Youmuu's Ghostblade", "Ionian Boots of Lucidity", "Opportunity", "Edge of Night", "Serylda's Grudge", "Axiom Arc"],
-    "runes": "Dark Harvest (Dominación) + Brujería",
+    "items": [
+      {
+        "id": 3142,
+        "name": "Espada Fantasma de Youmuu"
+      },
+      {
+        "id": 3158,
+        "name": "Botas Jonias de la Lucidez"
+      },
+      {
+        "id": 6697,
+        "name": "Arrogancia"
+      },
+      {
+        "id": 3814,
+        "name": "Filo de la Noche"
+      },
+      {
+        "id": 6694,
+        "name": "Rencor de Serylda"
+      },
+      {
+        "id": 6696,
+        "name": "Arco Axiomático"
+      }
+    ],
+    "runes": {
+      "keystone": 8128,
+      "primary": 8100,
+      "secondary": 8200,
+      "name": "Cosecha Oscura",
+      "icon": "perk-images/Styles/Domination/DarkHarvest/DarkHarvest.png",
+      "text": "Cosecha Oscura (Dominación) + Brujería"
+    },
     "tip": "Esperá en la niebla de guerra y borrá a un carry con un solo combo."
   },
   "cri": {
     "name": "Crítico",
-    "items": ["Yun Tal Wildarrows", "Berserker's Greaves", "Infinity Edge", "Phantom Dancer", "Lord Dominik's Regards", "Bloodthirster"],
-    "runes": "Fleet Footwork (Precisión) + Dominación",
+    "items": [
+      {
+        "id": 3032,
+        "name": "Flechas Salvajes de Yun Tal"
+      },
+      {
+        "id": 3006,
+        "name": "Grebas del Berserker"
+      },
+      {
+        "id": 3031,
+        "name": "Filo del Infinito"
+      },
+      {
+        "id": 3046,
+        "name": "Bailarín Espectral"
+      },
+      {
+        "id": 3036,
+        "name": "Recuerdos de Lord Dominik"
+      },
+      {
+        "id": 3072,
+        "name": "La Sanguinaria"
+      }
+    ],
+    "runes": {
+      "keystone": 8021,
+      "primary": 8000,
+      "secondary": 8100,
+      "name": "Sobre la Marcha",
+      "icon": "perk-images/Styles/Precision/FleetFootwork/FleetFootwork.png",
+      "text": "Sobre la Marcha (Precisión) + Dominación"
+    },
     "tip": "Farmeá tranquilo hasta tener dos ítems; desde ahí cada básico puede ser un crítico enorme."
   },
   "onh": {
     "name": "AD on-hit",
-    "items": ["Blade of the Ruined King", "Berserker's Greaves", "Wit's End", "Terminus", "Guinsoo's Rageblade", "Kraken Slayer"],
-    "runes": "Lethal Tempo (Precisión) + Valor",
+    "items": [
+      {
+        "id": 3153,
+        "name": "Espada del Rey Arruinado"
+      },
+      {
+        "id": 3006,
+        "name": "Grebas del Berserker"
+      },
+      {
+        "id": 3091,
+        "name": "Al Filo de la Cordura"
+      },
+      {
+        "id": 3302,
+        "name": "Terminus"
+      },
+      {
+        "id": 3124,
+        "name": "Espadafuria de Guinsoo"
+      },
+      {
+        "id": 6672,
+        "name": "Matakrakens"
+      }
+    ],
+    "runes": {
+      "keystone": 8008,
+      "primary": 8000,
+      "secondary": 8400,
+      "name": "Cadencia Letal",
+      "icon": "perk-images/Styles/Precision/LethalTempo/LethalTempoTemp.png",
+      "text": "Cadencia Letal (Precisión) + Valor"
+    },
     "tip": "Buscá peleas largas: cuanto más dura el intercambio, más ganás."
   },
   "tan": {
     "name": "Full tanque",
-    "items": ["Heartsteel", "Plated Steelcaps", "Sunfire Aegis", "Thornmail", "Jak'Sho, The Protean", "Warmog's Armor"],
-    "runes": "Grasp of the Undying (Valor) + Inspiración",
+    "items": [
+      {
+        "id": 3084,
+        "name": "Corazón de Acero"
+      },
+      {
+        "id": 3047,
+        "name": "Punteras de Acero Revestidas"
+      },
+      {
+        "id": 3068,
+        "name": "Égida de Fuego Solar"
+      },
+      {
+        "id": 3075,
+        "name": "Cota de Espinas"
+      },
+      {
+        "id": 6665,
+        "name": "Jak'Sho, el Proteico"
+      },
+      {
+        "id": 3083,
+        "name": "Armadura de Warmog"
+      }
+    ],
+    "runes": {
+      "keystone": 8437,
+      "primary": 8400,
+      "secondary": 8300,
+      "name": "Agarre del Perpetuo",
+      "icon": "perk-images/Styles/Resolve/GraspOfTheUndying/GraspOfTheUndying.png",
+      "text": "Agarre del Perpetuo (Valor) + Inspiración"
+    },
     "tip": "No vas a matar rápido, pero casi nadie te puede matar: iniciá y absorbé todo."
   },
   "bru": {
     "name": "Luchador",
-    "items": ["Trinity Force", "Plated Steelcaps", "Black Cleaver", "Sterak's Gage", "Death's Dance", "Spirit Visage"],
-    "runes": "Conqueror (Precisión) + Valor",
+    "items": [
+      {
+        "id": 3078,
+        "name": "Fuerza de la Trinidad"
+      },
+      {
+        "id": 3047,
+        "name": "Punteras de Acero Revestidas"
+      },
+      {
+        "id": 3071,
+        "name": "Cuchilla Oscura"
+      },
+      {
+        "id": 3053,
+        "name": "Guantelete de Sterak"
+      },
+      {
+        "id": 6333,
+        "name": "Danza de la Muerte"
+      },
+      {
+        "id": 3065,
+        "name": "Apariencia Espiritual"
+      }
+    ],
+    "runes": {
+      "keystone": 8010,
+      "primary": 8000,
+      "secondary": 8400,
+      "name": "Conquistador",
+      "icon": "perk-images/Styles/Precision/Conqueror/Conqueror.png",
+      "text": "Conquistador (Precisión) + Valor"
+    },
     "tip": "Pegate a alguien y no lo sueltes: ganás los duelos largos cuerpo a cuerpo."
   },
   "enc": {
     "name": "Encantador",
-    "items": ["Moonstone Renewer", "Ionian Boots of Lucidity", "Ardent Censer", "Staff of Flowing Water", "Redemption", "Mikael's Blessing"],
-    "runes": "Summon Aery (Brujería) + Inspiración",
+    "items": [
+      {
+        "id": 6617,
+        "name": "Renovador de Piedra Lunar"
+      },
+      {
+        "id": 3158,
+        "name": "Botas Jonias de la Lucidez"
+      },
+      {
+        "id": 3504,
+        "name": "Pebetero Ardiente"
+      },
+      {
+        "id": 6616,
+        "name": "Báculo de Agua Fluyente"
+      },
+      {
+        "id": 3107,
+        "name": "Redención"
+      },
+      {
+        "id": 3222,
+        "name": "Bendición de Mikael"
+      }
+    ],
+    "runes": {
+      "keystone": 8214,
+      "primary": 8200,
+      "secondary": 8300,
+      "name": "Invocación: Aery",
+      "icon": "perk-images/Styles/Sorcery/SummonAery/SummonAery.png",
+      "text": "Invocación: Aery (Brujería) + Inspiración"
+    },
     "tip": "Tu trabajo es que tu equipo no muera: escudos, curas y utilidad todo el tiempo."
   }
 }

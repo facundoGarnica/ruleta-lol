@@ -52,10 +52,20 @@ Los campeones están en `champions.json`, con este formato:
 - `r`: roles (`top`, `jg`, `mid`, `adc`, `sup`).
 - `w`: builds raras posibles (claves de `builds.json`): `apb` AP explosivo, `aph` AP on-hit, `apt` mago tanque, `let` letalidad, `cri` crítico, `onh` AD on-hit, `tan` full tanque, `bru` luchador, `enc` encantador.
 
-Los ítems y runas de cada build están en `builds.json`. Si Riot cambia algún ítem, se edita ahí y se actualiza para todos los campeones.
+Los ítems y runas de cada build están en `builds.json`, guardados por su ID de Riot. Los nombres en español (latino) y los íconos de campeones, ítems y runas salen de Data Dragon, el CDN oficial de Riot.
+
+Cuando salga un parche nuevo, corré:
+
+```bash
+npm run ddragon
+```
+
+Eso actualiza los nombres en `builds.json` y la versión en `ddragon.json`, y avisa si algún ítem ya no se compra en la Grieta. Para cambiar un ítem, poné su `id` (se busca en https://ddragon.leagueoflegends.com/cdn/<versión>/data/es_MX/item.json) y corré el comando.
 
 ## Archivos
 - `server.js` — salas, turnos, confirmaciones, sorteo y sincronización.
 - `champions.json` — campeones, roles y builds raras posibles.
 - `builds.json` — ítems, runas y consejo de cada tipo de build.
+- `ddragon.json` — versión del parche e ID de imagen de cada campeón (generado).
+- `scripts/actualizar-ddragon.js` — baja los datos de Riot (`npm run ddragon`).
 - `public/index.html` — la página (estilos y lógica del cliente).

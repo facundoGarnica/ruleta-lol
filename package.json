@@ -4,7 +4,8 @@
   "description": "Ruleta de campeones de LoL para 3 jugadores en tiempo real",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "ddragon": "node scripts/actualizar-ddragon.js"
   },
   "engines": {
     "node": ">=18"

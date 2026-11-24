@@ -106,6 +106,21 @@ select:disabled{opacity:.8;cursor:default}
 .build .ok.done{border-color:var(--c);background:color-mix(in srgb,var(--c) 16%,#0b2228)}
 .build .ok.ro{cursor:default}
 .build .other{font-size:14px}
+
+/* íconos (Data Dragon de Riot) */
+.slot .nm{display:flex;align-items:center;gap:10px}
+.slot .nt{overflow:hidden;text-overflow:ellipsis}
+.ic{flex:none;display:block;width:32px;height:32px;border-radius:8px;border:1px solid #2a5761;background:#0b2228;object-fit:cover}
+.slot.rolling .ic,.slot.empty .ic,.ic[hidden]{display:none}
+.slot.picked .ic{border-color:var(--c)}
+.build .bk{display:flex;align-items:center;gap:8px}
+.build .bk .ic{width:24px;height:24px;border-radius:6px}
+.build ol li{display:flex;align-items:center;gap:8px;padding:2px 0}
+.build ol .ic{width:26px;height:26px;border-radius:5px}
+.build ol{list-style:none;padding-left:0;counter-reset:it}
+.build ol li::before{counter-increment:it;content:counter(it);flex:none;width:1.2em;text-align:right;color:var(--mute);font-size:13px}
+.build .ru{display:flex;align-items:center;gap:8px}
+.build .ru .ic{width:26px;height:26px;border-radius:50%;background:#071418}
 </style>
 </head>
 <body>
@@ -141,6 +156,14 @@ const socket=io();
 const NAMES={1:"Facu",2:"Jordy",3:"Rexx"};
 const ROLES=[["any","Cualquiera"],["top","Top"],["jg","Jungla"],["mid","Mid"],["adc","ADC"],["sup","Support"]];
 let CHAMPS=["Ahri","Garen","Jinx","Lux","Yasuo","Thresh"];
+let ICONS={}, DDV=null;
+const DDCDN="https://ddragon.leagueoflegends.com/cdn";
+const champImg=n=>DDV&&ICONS[n]?`${DDCDN}/${DDV}/img/champion/${ICONS[n]}.png`:"";
+const itemImg=id=>DDV?`${DDCDN}/${DDV}/img/item/${id}.png`:"";
+const runeImg=p=>p?`${DDCDN}/img/${p}`:"";
+// <img> chico; si no carga, se oculta
+const icon=src=>{const im=document.createElement("img");im.className="ic";im.alt="";im.loading="lazy";im.width=im.height=32;if(src)im.src=src;else im.hidden=true;im.onerror=()=>{im.hidden=true};return im};
+const setIcon=(im,src)=>{if(!src){im.hidden=true;im.removeAttribute("src");return}im.onerror=()=>{im.hidden=true};if(im.getAttribute("src")!==src)im.src=src;im.hidden=false};
 let state=null, result=null, rolling=false;
 const timers=[];
 
@@ -148,7 +171,7 @@ $("seats").innerHTML=[1,2,3].map(s=>`
 <article class="seat" data-s="${s}">
   <header><span class="num">${s}</span><div><div class="who">${NAMES[s]}</div><div class="tag"><span class="online"></span><span class="st">Desconectado</span></div></div></header>
   <div class="rolerow"><label for="role${s}">Rol</label><select id="role${s}" class="role" data-s="${s}" disabled>${ROLES.map(([v,t])=>`<option value="${v}">${t}</option>`).join("")}</select></div>
-  <ol class="reels">${[0,1,2].map(i=>`<li><button class="slot empty" data-s="${s}" data-i="${i}"><span class="nm">—</span><span class="mk">Juego con este</span></button></li>`).join('')}</ol>
+  <ol class="reels">${[0,1,2].map(i=>`<li><button class="slot empty" data-s="${s}" data-i="${i}"><span class="nm"><img class="ic" alt="" width="32" height="32" hidden><span class="nt">—</span></span><span class="mk">Juego con este</span></button></li>`).join('')}</ol>
   <div class="build" hidden>
     <h3></h3><p class="bk"></p><p class="note"></p><ol></ol>
     <p class="ru"></p><p class="tp"></p>
@@ -196,11 +219,13 @@ function renderBuild(s,el,mine){
   box.hidden=!w;
   if(!w) return;
   box.querySelector("h3").textContent=`Build rara: ${w.name}`;
-  box.querySelector(".bk").textContent=`para ${w.champ}`;
+  const bk=box.querySelector(".bk"); bk.textContent="para"; bk.append(icon(champImg(w.champ)),w.champ);
   const note=box.querySelector(".note"); note.textContent=w.note||""; note.hidden=!w.note;
   const ol=box.querySelector("ol"); ol.textContent="";
-  for(const it of w.items){const li=document.createElement("li");li.textContent=it;ol.appendChild(li)}
-  box.querySelector(".ru").innerHTML="<b>Runas:</b> "; box.querySelector(".ru").append(w.runes);
+  for(const it of w.items){const li=document.createElement("li");li.append(icon(itemImg(it.id)),it.name);ol.appendChild(li)}
+  const ru=box.querySelector(".ru"); ru.textContent="";
+  const rb=document.createElement("b"); rb.textContent="Runas:";
+  ru.append(icon(runeImg(w.runes.icon)),rb," "+w.runes.text);
   box.querySelector(".tp").innerHTML="<b>Cómo jugarla:</b> "; box.querySelector(".tp").append(w.tip);
   const acc=box.querySelector(".acc"), lab=box.querySelector(".ok");
   acc.checked=!!w.accepted; acc.disabled=!mine;
@@ -245,12 +270,12 @@ function showResult(r,animate){
   result=r;
   const slots=[];
   for(const s of [1,2,3]) for(const i of [0,1,2]) slots.push([s,i]);
-  if(!r){slots.forEach(([s,i])=>{const b=slotEl(s,i);b.className="slot empty";b.querySelector(".nm").textContent="—"});rolling=false;render();return}
+  if(!r){slots.forEach(([s,i])=>{const b=slotEl(s,i);b.className="slot empty";b.querySelector(".nt").textContent="—";setIcon(b.querySelector(".ic"),"")});rolling=false;render();return}
   const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
   if(!animate||reduce){slots.forEach(([s,i])=>land(s,i,r.seats[s][i]));rolling=false;render();return}
   rolling=true; render();
   slots.forEach(([s,i],k)=>{
-    const b=slotEl(s,i), nm=b.querySelector(".nm");
+    const b=slotEl(s,i), nm=b.querySelector(".nt");
     b.classList.remove("empty","land","picked"); b.classList.add("rolling");
     const stopAt=performance.now()+700+k*170;
     const tick=()=>{
@@ -265,7 +290,8 @@ function showResult(r,animate){
 function land(s,i,name){
   const b=slotEl(s,i);
   b.classList.remove("rolling","empty","land"); void b.offsetWidth; b.classList.add("land");
-  b.querySelector(".nm").textContent=String(name);
+  b.querySelector(".nt").textContent=String(name);
+  setIcon(b.querySelector(".ic"),champImg(name));
 }
 function say(t,warn,ms=3500){
   const m=$("msg"); m.textContent=t; m.style.color=warn?"var(--p2)":"var(--mute)";
@@ -313,7 +339,12 @@ $("copy").addEventListener("click",()=>{
 const setStatus=on=>{$("dot").classList.toggle("on",on);$("stxt").textContent=on?"En vivo":"Reconectando…"};
 socket.on("connect",()=>{setStatus(true);join()});
 socket.on("disconnect",()=>setStatus(false));
-socket.on("champs",c=>{if(Array.isArray(c)&&c.length)CHAMPS=c.map(String)});
+socket.on("champs",c=>{
+  const list=Array.isArray(c)?c:c&&c.list;
+  if(Array.isArray(list)&&list.length)CHAMPS=list.map(String);
+  if(c&&c.icons){ICONS=c.icons;DDV=String(c.version||"")||null}
+  if(result&&!rolling) for(const s of [1,2,3]) for(const i of [0,1,2]) setIcon(slotEl(s,i).querySelector(".ic"),champImg(result.seats[s][i]));
+});
 socket.on("state",st=>{
   if(!st) return;
   state=st;

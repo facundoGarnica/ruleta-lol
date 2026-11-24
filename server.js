@@ -6,6 +6,7 @@ const crypto = require("crypto");
 const { Server } = require("socket.io");
 const DATA = require("./champions.json");   // { nombre: { r:[roles], w:[builds raras], n?:nota } }
 const BUILDS = require("./builds.json");
+const DD = require("./ddragon.json");        // { version, champs:{ nombre: idImagen } } — se genera con npm run ddragon
 const CHAMPS = Object.keys(DATA);
 const ROLES = ["any", "top", "jg", "mid", "adc", "sup"];
 
@@ -144,7 +145,7 @@ function checkRequest(code, r) {
 
 io.on("connection", (socket) => {
   let code = null;
-  socket.emit("champs", CHAMPS);
+  socket.emit("champs", { list: CHAMPS, icons: DD.champs, version: DD.version });
 
   function leave() {
     if (!code) return;
